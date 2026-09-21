@@ -1,8 +1,29 @@
 add_newline = false
 
-format = "$directory$all$character"
+format = "$username$hostname$directory$all$character"
+palette = "punchy"
 
 #--------------------------------PROMPT----------------------------------
+
+[palettes.punchy]
+black = "#1b1d23"
+red = "#ff5c57"
+green = "#62e36e"
+yellow = "#ffd166"
+orange = "#ff9f43"
+blue = "#4da3ff"
+purple = "#d66efd"
+cyan = "#2de2e6"
+white = "#e6e6e6"
+"bright-black" = "#7f849c"
+"bright-red" = "#ff6b66"
+"bright-green" = "#69ff97"
+"bright-yellow" = "#ffe27a"
+"bright-blue" = "#69ceff"
+"bright-purple" = "#d9a0ff"
+"bright-cyan" = "#7de3ff"
+"bright-white" = "#ffffff"
+
 
 [line_break]
 disabled = true
@@ -28,6 +49,7 @@ format = '\[[$symbol($version(-$name))]($style)\] '
 format = '\[[$symbol($version)]($style)\] '
 
 [cmd_duration]
+style = "bold orange"
 format = '\[[⏱ $duration]($style)\] '
 
 [cobol]
@@ -47,7 +69,13 @@ symbol = " "
 format = '\[[$symbol($version)]($style)\] '
 
 [directory]
+style = "bold blue"
+format = '[$path]($style) '
 read_only = " 🔒"
+truncation_length = 2
+truncate_to_repo = false
+truncation_symbol = ""
+home_symbol = "~"
 
 [deno]
 format = '\[[$symbol($version)]($style)\] '
@@ -72,9 +100,11 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\] '
 
 [git_branch]
 symbol = " "
+style = "bold purple"
 format = '\[[$symbol$branch]($style)\]'
 
 [git_status]
+style = "bold red"
 format = '([\[$all_status$ahead_behind\]]($style)) '
 
 [golang]
@@ -125,6 +155,7 @@ format = '\[[$symbol$state( \($name\))]($style)\] '
 
 [nodejs]
 symbol = " "
+style = "bold green"
 format = '\[[$symbol($version)]($style)\] '
 
 [ocaml]
@@ -189,7 +220,12 @@ format = '\[[$symbol$workspace]($style)\] '
 [time]
 format = '\[[$time]($style)\] '
 
+[hostname]
+style = "bold cyan"
+
 [username]
+style_user = "bold yellow"
+style_root = "bold red"
 format = '\[[$user]($style)\] '
 
 [vagrant]
